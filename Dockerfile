@@ -1,8 +1,8 @@
 # build this image with command
-#   docker build -t atofstrykercypress/cypress-modified-docker-images:4.0.0 .
+#   docker build -t atofstrykercypress/cypress-modified-docker-images:3.8.3 .
 #
 # manually push this image with this command
-#    docker push atofstrykercypress/cypress-modified-docker-images:4.0.0 
+#    docker push atofstrykercypress/cypress-modified-docker-images:3.8.3 
 #
 FROM cypress/browsers:node12.16.1-chrome80-ff73
 
@@ -28,7 +28,7 @@ RUN id
 # point Cypress at the /root/cache no matter what user account is used
 # see https://on.cypress.io/caching
 ENV CYPRESS_CACHE_FOLDER=/root/.cache/Cypress
-RUN npm install -g "cypress@4.0.0"
+RUN npm install -g "cypress@3.8.3"
 RUN cypress verify
 
 # Cypress cache and installed version
